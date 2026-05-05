@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write   
+  contents: write
 
 jobs:
   build:
@@ -22,10 +22,10 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install --frozen-lockfile
 
       - name: Build project
-        run: npm run build
+        run: yarn build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
