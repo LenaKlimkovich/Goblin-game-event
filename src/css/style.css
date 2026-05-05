@@ -1,0 +1,23 @@
+body {
+  color: #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  cursor: url('../pic/hammer.png') 20 20, auto;
+}
+
+#game {
+  display: grid;
+  grid-template-columns: repeat(4, 130px);
+  grid-template-rows: repeat(4, 130px);
+  gap: 7px;
+}
+
+.cell {
+  border: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
