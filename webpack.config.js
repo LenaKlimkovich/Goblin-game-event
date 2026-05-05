@@ -6,6 +6,7 @@ module.exports = {
   entry: './src/js/app.js',
 
   output: {
+    publicPath: '/Goblin-game-event/', 
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
