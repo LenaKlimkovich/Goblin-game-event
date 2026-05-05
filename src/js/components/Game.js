@@ -4,7 +4,7 @@ const game = document.getElementById('game');
 
 export default class Game {
   constructor() {
-    this.board = new Board(16);
+    this.board = new Board();
     this.score = 0;
     this.missed = 0;
     this.currentIndex = -1;
