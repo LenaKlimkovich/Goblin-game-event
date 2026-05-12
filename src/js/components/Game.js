@@ -49,16 +49,17 @@ export default class Game {
     }
 
     tick() {
-        if (this.missed >= this.fatalScore) {
-            clearInterval(this.interval);
-            this.showModal('Вы проиграли!');
-            return;
-        }
         if (this.currentIndex !== -1) {
             this.missed++;
             your_failures.innerText = `Вы промахнулись ${this.missed} раз(а)`;
         }
 
+        if (this.missed >= this.fatalScore) {
+            clearInterval(this.interval);
+            this.showModal('Вы проиграли!');
+            return;
+        }
+    
         let newIndex = this.currentIndex;
         while (newIndex === this.currentIndex) {
             newIndex = Math.floor(Math.random() * this.board.boardSize);
@@ -68,6 +69,7 @@ export default class Game {
         this.board.positionGoblin(newIndex);
     }
     restartGame() {
+        clearInterval(this.interval);
         this.score = 0;
         this.missed = 0;
         this.currentIndex = -1;
